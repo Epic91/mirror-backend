@@ -3,45 +3,45 @@ class PromptsController < ApplicationController
 
   # GET /prompts
   def index
-    @prompts = Prompt.all
+    prompts = Prompt.all
 
-    render json: @prompts
+    render json: prompts, only: [:question]
   end
 
   # GET /prompts/1
   def show
-    render json: @prompt
+    render json: prompt
   end
 
   # POST /prompts
-  def create
-    @prompt = Prompt.new(prompt_params)
+  # def create
+  #   @prompt = Prompt.new(prompt_params)
 
-    if @prompt.save
-      render json: @prompt, status: :created, location: @prompt
-    else
-      render json: @prompt.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @prompt.save
+  #     render json: @prompt, status: :created, location: @prompt
+  #   else
+  #     render json: @prompt.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /prompts/1
-  def update
-    if @prompt.update(prompt_params)
-      render json: @prompt
-    else
-      render json: @prompt.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @prompt.update(prompt_params)
+  #     render json: @prompt
+  #   else
+  #     render json: @prompt.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /prompts/1
-  def destroy
-    @prompt.destroy
-  end
+  # def destroy
+  #   @prompt.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_prompt
-      @prompt = Prompt.find(params[:id])
+      prompt = Prompt.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
