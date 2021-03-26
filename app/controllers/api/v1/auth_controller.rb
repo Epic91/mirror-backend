@@ -3,7 +3,14 @@ class Api::V1::AuthController < ApplicationController
         user =  User.find_by(username: params[:username])
         
         if user && user.authenticate(params[:password])
-            render json: user
+            payload = {user_id: user.id }
+            hmac_secret = 'S3CR3T'
+
+
+            token = JWT.encode(payload, hmac_secret, 'HS256')
+
+            #create a token and hide the ussers id
+            render json: {user: UserSerializer.new(user), token: token}
         else
             render json: {error: 'Invalid username or password'}
         end
