@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :entries
-  post '/entries', to: 'entries#create'
+  # post '/entries', to: 'entries#create'
 
   resources :prompts
 
