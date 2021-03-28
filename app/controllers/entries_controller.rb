@@ -35,7 +35,11 @@ class EntriesController < ApplicationController
 
   # DELETE /entries/1
   def destroy
+    entry = Entry.find(params[:id])
     entry.destroy
+
+    render json: entry
+
   end
 
   private

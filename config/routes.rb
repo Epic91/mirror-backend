@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :entries
   post '/entries', to: 'entries#create'
+  get '/entries', to: 'entries#show'
+  delete '/entries/:id', to: 'entries#destroy'
+  patch '/entries/:id', to: 'entries#update'
 
   resources :prompts
 
