@@ -24,13 +24,24 @@ class EntriesController < ApplicationController
     end
   end
 
+  def edit
+    entry = Entry.find_by(params[:id])
+    entry.edit
+
+    render json: entry
+  end
+
   # PATCH/PUT /entries/1
   def update
-    if entry.update(entry_params)
-      render json: entry
-    else
-      render json: entry.errors, status: :unprocessable_entity
-    end
+    entry = Entry.find_by(params[:id])
+    entry.update(entry_params)
+    
+    render json: entry
+    # if entry.update(entry_params)
+    #   render json: entry
+    # else
+      # render json: entry.errors, status: :unprocessable_entity
+    # end
   end
 
   # DELETE /entries/1
@@ -39,17 +50,14 @@ class EntriesController < ApplicationController
     entry.destroy
 
     render json: entry
-
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_entry
       entry = Entry.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:subject, :emotion, :emotion_image, :body, :topic, :topic_image, :highlight, :date, :user_id, :prompt_id)
+      params.permit(:subject, :emotion, :emotion_image, :body, :topic, :topic_image, :highlight, :date, :user_id, :prompt_id)
     end
 end
