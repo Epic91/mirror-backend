@@ -15,13 +15,14 @@ class EntriesController < ApplicationController
 
   # POST /entries
   def create
-    entry = Entry.new(entry_params)
+    entry = Entry.create(entry_params)
 
     if entry.save
-      render json: entry, status: :created, location: entry
+      render json: entry, status: :created
     else
       render json: entry.errors, status: :unprocessable_entity
     end
+
   end
 
   def edit
@@ -58,6 +59,7 @@ class EntriesController < ApplicationController
     end
 
     def entry_params
-      params.permit(:subject, :emotion, :emotion_image, :body, :topic, :topic_image, :highlight, :date, :user_id, :prompt_id)
+      # params.require(:entry).permit(:subject, :emotion, :body, :date)
+      params.require(:entry).permit(:subject, :emotion, :emotion_image, :body, :topic, :topic_image, :highlight, :date, :user_id, :prompt_id)
     end
 end
