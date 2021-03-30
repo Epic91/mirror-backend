@@ -10,6 +10,8 @@ class EntriesController < ApplicationController
 
   # GET /entries/1
   def show
+    entry = Entry.find_by(params[:id])
+
     render json: entry
   end
 
@@ -35,6 +37,7 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1
   def update
     entry = Entry.find_by(params[:id])
+    # byebug
     entry.update(entry_params)
     
     render json: entry
@@ -60,6 +63,6 @@ class EntriesController < ApplicationController
 
     def entry_params
       # params.require(:entry).permit(:subject, :emotion, :body, :date)
-      params.require(:entry).permit(:subject, :emotion, :emotion_image, :body, :topic, :topic_image, :highlight, :date, :user_id, :prompt_id)
+      params.require(:entry).permit(:subject, :emotion, :body, :topic, :highlight, :date, :user_id, :prompt_id)
     end
 end

@@ -3,10 +3,8 @@ class CreateEntries < ActiveRecord::Migration[6.1]
     create_table :entries do |t|
       t.string :subject
       t.string :emotion
-      t.string :emotion_image
       t.text :body
       t.string :topic
-      t.string :topic_image
       t.text :highlight
       t.string :date
       t.integer :user_id

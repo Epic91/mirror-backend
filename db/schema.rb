@@ -15,10 +15,8 @@ ActiveRecord::Schema.define(version: 2021_03_23_190456) do
   create_table "entries", force: :cascade do |t|
     t.string "subject"
     t.string "emotion"
-    t.string "emotion_image"
     t.text "body"
     t.string "topic"
-    t.string "topic_image"
     t.text "highlight"
     t.string "date"
     t.integer "user_id"

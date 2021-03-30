@@ -35,9 +35,9 @@ prompt_14 = Prompt.create(question: 'What are 3 things that make you angry? Why?
 prompt_15 = Prompt.create(question: 'What are some of your favorite books? Why? Write about them.')
 
 #entries
-entry_1 = Entry.create(subject: 'Imposter syndrome', emotion: 'Okay', emotion_image: '😐', body: 'I keep questioning, keep comparing myself to others. My classmates seem to know so much more about the material than I do. Why cant I just absorb all the knowledge in one go?', topic: 'School', topic_image: '🏫', highlight: 'My wife brought me flowers :)', date: '03/13/2021', user_id: 1, prompt_id: 2)
+entry_1 = Entry.create(subject: 'Imposter syndrome', emotion: 'Okay', body: 'I keep questioning, keep comparing myself to others. My classmates seem to know so much more about the material than I do. Why cant I just absorb all the knowledge in one go?', topic: 'School', highlight: 'My wife brought me flowers :)', date: '03/13/2021', user_id: 1, prompt_id: 2)
 
-entry_2 = Entry.create(subject: 'My hours are getting cut...', emotion: 'stressed', emotion_image: '😥', body: 'I\'m not sure what to do about our financial situation. The bills are piling up... I think its time to start looking for another job.. Hopefully I can find one and fast..', topic: 'Finance', topic_image: '💲', highlight: 'A butterfly landed on my arm today! I stood as still as I could and took in its beauty.', date: '03/14/2021', user_id: 2, prompt_id: 1)
+entry_2 = Entry.create(subject: 'My hours are getting cut...', emotion: 'stressed', body: 'I\'m not sure what to do about our financial situation. The bills are piling up... I think its time to start looking for another job.. Hopefully I can find one and fast..', topic: 'Finance', highlight: 'A butterfly landed on my arm today! I stood as still as I could and took in its beauty.', date: '03/14/2021', user_id: 2, prompt_id: 1)
 
-entry_3 = Entry.create(subject: 'My wife received a promotion!!', emotion: 'Happy', emotion_image: '😃', body: 'I believe someone or something is looking out for us! Yolis got a promotion at work and a bonus! I can cry of happiness right now!', topic: 'Work', topic_image: '💼', highlight: 'I found my favorite hat!!', date: '03/15/2021', user_id: 1, prompt_id: 3)
+entry_3 = Entry.create(subject: 'My wife received a promotion!!', emotion: 'Happy', body: 'I believe someone or something is looking out for us! Yolis got a promotion at work and a bonus! I can cry of happiness right now!', topic: 'Work', highlight: 'I found my favorite hat!!', date: '03/15/2021', user_id: 1, prompt_id: 3)
 
